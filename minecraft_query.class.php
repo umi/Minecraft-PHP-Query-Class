@@ -43,13 +43,10 @@
 			$result = array();
 			$response = str_replace(chr(0),"",$response);
 			$query = preg_split("/[".chr(255).chr(167)."]/", $response, -1, PREG_SPLIT_NO_EMPTY);
-			echo $response;
-			print_r($query);
+			
 			$result['hostname'] 	= $query[0];
 			$result['players']		= (int) $query[1];
 			$result['maxplayers'] 	= (int) $query[2];
-			print_r($result);
-			
 			return $result;
 		}
 	}
